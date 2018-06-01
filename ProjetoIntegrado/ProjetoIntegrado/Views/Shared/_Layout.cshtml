@@ -1,12 +1,26 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <title>@ViewBag.Title - Projeto Integrado.</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    $(this).parent().siblings().removeClass('open');
+                    $(this).parent().toggleClass('open');
+                });
+            });
+        })(jQuery);
+    </script>
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,13 +31,65 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Projeto Integrado", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                <ul class="nav navbar-nav navbar">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-home"></span> Cadastros<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Cadastro", "Membro")"><span class="glyphicon glyphicon-home"></span> Membro</a></li>
+                            <li><a href="@Url.Action("Cadastro", "Usuario")"><span class="glyphicon glyphicon-home"></span> Usuário</a></li>
+                            <li><a href="@Url.Action("Cadastro", "Perfil")"><span class="glyphicon glyphicon-home"></span> Perfil</a></li>
+                            <li><a href="@Url.Action("Cadastro", "Funcao")"><span class="glyphicon glyphicon-home"></span> Função</a></li>
+                            <li class="nav-divider"></li>
+                            <li><a href="@Url.Action("Cadastro", "Evento")"><span class="glyphicon glyphicon-home"></span> Evento</a></li>
+                            <li><a href="@Url.Action("Cadastro", "PublicoAlvo")"><span class="glyphicon glyphicon-home"></span> Público Alvo</a></li>
+                            <li class="nav-divider"></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="@Url.Action("Cadastro", "Produto")"><span class="glyphicon glyphicon-home"></span> Produto</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Cadastro", "Categoria")"><span class="glyphicon glyphicon-home"></span> Categoria</a></li>
+                                    <li><a href="@Url.Action("Cadastro", "MarcaProduto")"><span class="glyphicon glyphicon-home"></span> Marca</a></li>
+                                    <li><a href="@Url.Action("Cadastro", "GrupoProduto")"><span class="glyphicon glyphicon-home"></span> Grupo</a></li>
+                                    <li><a href="@Url.Action("Cadastro", "LocalProduto")"><span class="glyphicon glyphicon-home"></span> Local</a></li>
+                                    <li><a href="@Url.Action("Cadastro", "UnidadeMedida")"><span class="glyphicon glyphicon-home"></span> Unidade de Medida</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-divider"></li>
+                            <li><a href="@Url.Action("Cadastro", "Pais")"><span class="glyphicon glyphicon-home"></span> País</a></li>
+                            <li><a href="@Url.Action("Cadastro", "Estado")"><span class="glyphicon glyphicon-home"></span> Estado</a></li>
+                            <li><a href="@Url.Action("Cadastro", "Cidade")"><span class="glyphicon glyphicon-home"></span> Cidade</a></li>
+                            <li><a href="@Url.Action("Cadastro", "Fornecedor")"><span class="glyphicon glyphicon-home"></span> Fornecedor</a></li>
+                            <li class="nav-divider"></li>
+                            <li><a href="@Url.Action("Cadastro", "ContaPagar")"><span class="glyphicon glyphicon-home"></span> Contas à Pagar</a></li>
+                            <li><a href="@Url.Action("Cadastro", "TipoPagamento")"><span class="glyphicon glyphicon-home"></span> Tipo de Pagamento</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Operações<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Relatórios<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Gráficos<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
                 </ul>
             </div>
         </div>
@@ -32,7 +98,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Projeto Integrado</p>
         </footer>
     </div>
 
