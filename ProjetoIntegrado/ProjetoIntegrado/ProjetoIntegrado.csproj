@@ -142,7 +142,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\EventoController.cs" />
+    <Compile Include="Controllers\FornecedorController.cs" />
+    <Compile Include="Controllers\FuncaoController.cs" />
+    <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocalController.cs" />
+    <Compile Include="Controllers\MarcaController.cs" />
+    <Compile Include="Controllers\MembroController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\PublicoController.cs" />
+    <Compile Include="Controllers\UnidadeMedidaController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,9 +217,24 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Sobre.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Usuario\Cadastro.cshtml" />
+    <Content Include="Views\Membro\Cadastro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Categoria\" />
+    <Folder Include="Views\EventoDefault\" />
+    <Folder Include="Views\Evento\" />
+    <Folder Include="Views\Fornecedor\" />
+    <Folder Include="Views\Funcao\" />
+    <Folder Include="Views\Grupo\" />
+    <Folder Include="Views\Local\" />
+    <Folder Include="Views\Marca\" />
+    <Folder Include="Views\Perfil\" />
+    <Folder Include="Views\Produto\" />
+    <Folder Include="Views\PublicoAlvo\" />
+    <Folder Include="Views\Publico\" />
+    <Folder Include="Views\UnidadeMedida\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
