@@ -13,5 +13,11 @@ namespace ProjetoIntegrado.Controllers
         {
             return View();
         }
+
+        [Route("Fornecedor/Cadastro")]
+        public ActionResult Cadastro()
+        {
+            return View();
+        }
     }
 }

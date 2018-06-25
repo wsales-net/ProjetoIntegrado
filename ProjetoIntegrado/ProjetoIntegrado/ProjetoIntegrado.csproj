@@ -143,6 +143,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\FornecedorController.cs" />
     <Compile Include="Controllers\FuncaoController.cs" />
@@ -219,22 +220,24 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Usuario\Cadastro.cshtml" />
     <Content Include="Views\Membro\Cadastro.cshtml" />
+    <Content Include="Views\Perfil\Cadastro.cshtml" />
+    <Content Include="Views\Funcao\Cadastro.cshtml" />
+    <Content Include="Views\Evento\Cadastro.cshtml" />
+    <Content Include="Views\Publico\Cadastro.cshtml" />
+    <Content Include="Views\Produto\Cadastro.cshtml" />
+    <Content Include="Views\Categoria\Cadastro.cshtml" />
+    <Content Include="Views\UnidadeMedida\Cadastro.cshtml" />
+    <Content Include="Views\Local\Cadastro.cshtml" />
+    <Content Include="Views\Grupo\Cadastro.cshtml" />
+    <Content Include="Views\Marca\Cadastro.cshtml" />
+    <Content Include="Views\Conta\Pagamento.cshtml" />
+    <Content Include="Views\Conta\Recebimento.cshtml" />
+    <Content Include="Views\Conta\Tipo.cshtml" />
+    <Content Include="Views\Fornecedor\Cadastro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Categoria\" />
     <Folder Include="Views\EventoDefault\" />
-    <Folder Include="Views\Evento\" />
-    <Folder Include="Views\Fornecedor\" />
-    <Folder Include="Views\Funcao\" />
-    <Folder Include="Views\Grupo\" />
-    <Folder Include="Views\Local\" />
-    <Folder Include="Views\Marca\" />
-    <Folder Include="Views\Perfil\" />
-    <Folder Include="Views\Produto\" />
-    <Folder Include="Views\PublicoAlvo\" />
-    <Folder Include="Views\Publico\" />
-    <Folder Include="Views\UnidadeMedida\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
