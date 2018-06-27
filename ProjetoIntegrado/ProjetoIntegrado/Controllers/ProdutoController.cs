@@ -14,8 +14,22 @@ namespace ProjetoIntegrado.Controllers
             return View();
         }
 
-        [Route("Produto/Cadastro")]
         public ActionResult Cadastro()
+        {
+            return View();
+        }
+
+        public ActionResult Entrada()
+        {
+            return View();
+        }
+
+        public ActionResult Saida()
+        {
+            return View();
+        }
+
+        public ActionResult Lancamento()
         {
             return View();
         }

@@ -20,7 +20,6 @@ namespace ProjetoIntegrado.Controllers
             return View();
         }
 
-        [Route("Conta/Recebimento")]
         public ActionResult Recebimento()
         {
             return View();

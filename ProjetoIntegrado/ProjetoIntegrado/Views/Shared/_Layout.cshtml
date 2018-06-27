@@ -77,22 +77,30 @@
                             <span class="glyphicon glyphicon-home"></span> Operações<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>
-                                <a href="@Url.Action("Recebimento", "Conta")"><span class="glyphicon glyphicon-home"></span> Conta à Receber</a>
-                            </li>
+                            <li><a href="@Url.Action("Inventario", "Operacao")"><span class="glyphicon glyphicon-home"></span> Invetário de estoque</a></li>
+                            <li><a href="@Url.Action("Entrada", "Produto")"><span class="glyphicon glyphicon-home"></span> Entrada de produtos</a></li>
+                            <li><a href="@Url.Action("Saida", "Produto")"><span class="glyphicon glyphicon-home"></span> Saída de produtos</a></li>
+                            <li><a href="@Url.Action("Lancamento", "Produto")"><span class="glyphicon glyphicon-home"></span> Lançamento de perda de produtos</a></li>
+                            <li class="nav-divider"></li>
+                            <li><a href="@Url.Action("Recebimento", "Conta")"><span class="glyphicon glyphicon-home"></span> Conta à Receber</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Relatórios<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-home"></span> Relatórios<span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+                            <li><a href="@Url.Action("Estoque", "Relatorio")"><span class="glyphicon glyphicon-home"></span> Posição do estoque</a></li>
+                            <li><a href="@Url.Action("Ressuprimento", "Relatorio")"><span class="glyphicon glyphicon-home"></span> Ressuprimento</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Gráficos<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-home"></span> Gráficos<span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
-                        </ul>
+                            <li><a href="@Url.Action("Perdas", "Grafico")"><span class="glyphicon glyphicon-home"></span> Perdas por mês</a></li>
+                            <li><a href="@Url.Action("EntradaSaida", "Grafico")"><span class="glyphicon glyphicon-home"></span> Entrada x Saída / Mês</a></li>                        </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

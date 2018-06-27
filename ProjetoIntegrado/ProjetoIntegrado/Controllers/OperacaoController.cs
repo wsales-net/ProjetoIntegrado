@@ -6,15 +6,15 @@ using System.Web.Mvc;
 
 namespace ProjetoIntegrado.Controllers
 {
-    public class FornecedorController : Controller
+    public class OperacaoController : Controller
     {
-        // GET: Fornecedor
+        // GET: Operacao
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Cadastro()
+        public ActionResult Inventario()
         {
             return View();
         }

@@ -147,14 +147,17 @@
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\FornecedorController.cs" />
     <Compile Include="Controllers\FuncaoController.cs" />
+    <Compile Include="Controllers\GraficoController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalController.cs" />
     <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="Controllers\MembroController.cs" />
+    <Compile Include="Controllers\OperacaoController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\PublicoController.cs" />
+    <Compile Include="Controllers\RelatorioController.cs" />
     <Compile Include="Controllers\UnidadeMedidaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +237,14 @@
     <Content Include="Views\Conta\Recebimento.cshtml" />
     <Content Include="Views\Conta\Tipo.cshtml" />
     <Content Include="Views\Fornecedor\Cadastro.cshtml" />
+    <Content Include="Views\Operacao\Inventario.cshtml" />
+    <Content Include="Views\Relatorio\Ressuprimento.cshtml" />
+    <Content Include="Views\Relatorio\Estoque.cshtml" />
+    <Content Include="Views\Produto\Entrada.cshtml" />
+    <Content Include="Views\Produto\Saida.cshtml" />
+    <Content Include="Views\Produto\Lancamento.cshtml" />
+    <Content Include="Views\Grafico\Perdas.cshtml" />
+    <Content Include="Views\Grafico\EntradaSaida.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

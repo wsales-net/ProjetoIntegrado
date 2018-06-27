@@ -6,15 +6,20 @@ using System.Web.Mvc;
 
 namespace ProjetoIntegrado.Controllers
 {
-    public class FornecedorController : Controller
+    public class RelatorioController : Controller
     {
-        // GET: Fornecedor
+        // GET: Relatorio
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Cadastro()
+        public ActionResult Ressuprimento()
+        {
+            return View();
+        }
+
+        public ActionResult Estoque()
         {
             return View();
         }
