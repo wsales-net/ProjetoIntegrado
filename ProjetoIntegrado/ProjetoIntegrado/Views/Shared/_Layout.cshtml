@@ -34,78 +34,93 @@
                 @Html.ActionLink("Projeto Integrado", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar">
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-home"></span> Cadastros<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="@Url.Action("Cadastro", "Membro")"><span class="glyphicon glyphicon-home"></span> Membro</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("Cadastro", "Usuario")"><span class="glyphicon glyphicon-home"></span> Usuario</a></li>
-                                    <li><a href="@Url.Action("Cadastro", "Perfil")"><span class="glyphicon glyphicon-home"></span> Perfil</a></li>
-                                    <li><a href="@Url.Action("Cadastro", "Funcao")"><span class="glyphicon glyphicon-home"></span> Funcao</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-divider"></li>
-                            <li><a href="@Url.Action("Cadastro", "Evento")"><span class="glyphicon glyphicon-home"></span> Evento</a></li>
-                            <li><a href="@Url.Action("Cadastro", "Publico")"><span class="glyphicon glyphicon-home"></span> Público Alvo</a></li>
-                            <li class="nav-divider"></li>
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="@Url.Action("Cadastro", "Produto")"><span class="glyphicon glyphicon-home"></span> Produto</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("Cadastro", "Categoria")"><span class="glyphicon glyphicon-home"></span> Categoria</a></li>
-                                    <li><a href="@Url.Action("Cadastro", "Marca")"><span class="glyphicon glyphicon-home"></span> Marca</a></li>
-                                    <li><a href="@Url.Action("Cadastro", "Grupo")"><span class="glyphicon glyphicon-home"></span> Grupo</a></li>
-                                    <li><a href="@Url.Action("Cadastro", "Local")"><span class="glyphicon glyphicon-home"></span> Local</a></li>
-                                    <li><a href="@Url.Action("Cadastro", "UnidadeMedida")"><span class="glyphicon glyphicon-home"></span> Unidade de Medida</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-divider"></li>
-                            <li><a href="@Url.Action("Cadastro", "Pais")"><span class="glyphicon glyphicon-home"></span> País</a></li>
-                            <li><a href="@Url.Action("Cadastro", "Estado")"><span class="glyphicon glyphicon-home"></span> Estado</a></li>
-                            <li><a href="@Url.Action("Cadastro", "Cidade")"><span class="glyphicon glyphicon-home"></span> Cidade</a></li>
-                            <li><a href="@Url.Action("Cadastro", "Fornecedor")"><span class="glyphicon glyphicon-home"></span> Fornecedor</a></li>
-                            <li class="nav-divider"></li>
-                            <li><a href="@Url.Action("Pagamento", "Conta")"><span class="glyphicon glyphicon-home"></span> Conta à Pagar</a></li>
-                            <li><a href="@Url.Action("Tipo", "Conta")"><span class="glyphicon glyphicon-home"></span> Tipo De Pagamento</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-home"></span> Operações<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Inventario", "Operacao")"><span class="glyphicon glyphicon-home"></span> Invetário de estoque</a></li>
-                            <li><a href="@Url.Action("Entrada", "Produto")"><span class="glyphicon glyphicon-home"></span> Entrada de produtos</a></li>
-                            <li><a href="@Url.Action("Saida", "Produto")"><span class="glyphicon glyphicon-home"></span> Saída de produtos</a></li>
-                            <li><a href="@Url.Action("Lancamento", "Produto")"><span class="glyphicon glyphicon-home"></span> Lançamento de perda de produtos</a></li>
-                            <li class="nav-divider"></li>
-                            <li><a href="@Url.Action("Recebimento", "Conta")"><span class="glyphicon glyphicon-home"></span> Conta à Receber</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-home"></span> Relatórios<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Estoque", "Relatorio")"><span class="glyphicon glyphicon-home"></span> Posição do estoque</a></li>
-                            <li><a href="@Url.Action("Ressuprimento", "Relatorio")"><span class="glyphicon glyphicon-home"></span> Ressuprimento</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-home"></span> Gráficos<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Perdas", "Grafico")"><span class="glyphicon glyphicon-home"></span> Perdas por mês</a></li>
-                            <li><a href="@Url.Action("EntradaSaida", "Grafico")"><span class="glyphicon glyphicon-home"></span> Entrada x Saída / Mês</a></li>                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
-                </ul>
+                @if (Request.IsAuthenticated)
+                {
+                    <ul class="nav navbar-nav navbar">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-home"></span> Cadastros<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="@Url.Action("Cadastro", "Membro")"><span class="glyphicon glyphicon-home"></span> Membro</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="@Url.Action("Cadastro", "Usuario")"><span class="glyphicon glyphicon-home"></span> Usuario</a></li>
+                                        <li><a href="@Url.Action("Cadastro", "Perfil")"><span class="glyphicon glyphicon-home"></span> Perfil</a></li>
+                                        <li><a href="@Url.Action("Cadastro", "Funcao")"><span class="glyphicon glyphicon-home"></span> Funcao</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-divider"></li>
+                                <li><a href="@Url.Action("Cadastro", "Evento")"><span class="glyphicon glyphicon-home"></span> Evento</a></li>
+                                <li><a href="@Url.Action("Cadastro", "Publico")"><span class="glyphicon glyphicon-home"></span> Público Alvo</a></li>
+                                <li class="nav-divider"></li>
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="@Url.Action("Cadastro", "Produto")"><span class="glyphicon glyphicon-home"></span> Produto</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="@Url.Action("Cadastro", "Categoria")"><span class="glyphicon glyphicon-home"></span> Categoria</a></li>
+                                        <li><a href="@Url.Action("Cadastro", "Marca")"><span class="glyphicon glyphicon-home"></span> Marca</a></li>
+                                        <li><a href="@Url.Action("Cadastro", "Grupo")"><span class="glyphicon glyphicon-home"></span> Grupo</a></li>
+                                        <li><a href="@Url.Action("Cadastro", "Local")"><span class="glyphicon glyphicon-home"></span> Local</a></li>
+                                        <li><a href="@Url.Action("Cadastro", "UnidadeMedida")"><span class="glyphicon glyphicon-home"></span> Unidade de Medida</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-divider"></li>
+                                <li><a href="@Url.Action("Cadastro", "Pais")"><span class="glyphicon glyphicon-home"></span> País</a></li>
+                                <li><a href="@Url.Action("Cadastro", "Estado")"><span class="glyphicon glyphicon-home"></span> Estado</a></li>
+                                <li><a href="@Url.Action("Cadastro", "Cidade")"><span class="glyphicon glyphicon-home"></span> Cidade</a></li>
+                                <li><a href="@Url.Action("Cadastro", "Fornecedor")"><span class="glyphicon glyphicon-home"></span> Fornecedor</a></li>
+                                <li class="nav-divider"></li>
+                                <li><a href="@Url.Action("Pagamento", "Caixa")"><span class="glyphicon glyphicon-home"></span> Conta à Pagar</a></li>
+                                <li><a href="@Url.Action("Tipo", "Caixa")"><span class="glyphicon glyphicon-home"></span> Tipo De Pagamento</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-home"></span> Operações<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Inventario", "Operacao")"><span class="glyphicon glyphicon-home"></span> Invetário de estoque</a></li>
+                                <li><a href="@Url.Action("Entrada", "Produto")"><span class="glyphicon glyphicon-home"></span> Entrada de produtos</a></li>
+                                <li><a href="@Url.Action("Saida", "Produto")"><span class="glyphicon glyphicon-home"></span> Saída de produtos</a></li>
+                                <li><a href="@Url.Action("Lancamento", "Produto")"><span class="glyphicon glyphicon-home"></span> Lançamento de perda de produtos</a></li>
+                                <li class="nav-divider"></li>
+                                <li><a href="@Url.Action("Recebimento", "Caixa")"><span class="glyphicon glyphicon-home"></span> Conta à Receber</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-home"></span> Relatórios<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Estoque", "Relatorio")"><span class="glyphicon glyphicon-home"></span> Posição do estoque</a></li>
+                                <li><a href="@Url.Action("Ressuprimento", "Relatorio")"><span class="glyphicon glyphicon-home"></span> Ressuprimento</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-home"></span> Gráficos<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Perdas", "Grafico")"><span class="glyphicon glyphicon-home"></span> Perdas por mês</a></li>
+                                <li><a href="@Url.Action("EntradaSaida", "Grafico")"><span class="glyphicon glyphicon-home"></span> Entrada x Saída / Mês</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Login", "Login", "Usuario")</li>
+                        <li><a href="#">Olá @User.Identity.Name</a></li>
+                        @using (Html.BeginForm("Logout", "Usuario", FormMethod.Post, new { id = "logoutForm" }))
+                        {
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Sair</a></li>
+                        }
+                    </ul>//$('#tweetform').submit(); javascript:document.getElementById('logoutForm').submit()
+                }
+                else
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Login", "Login", "Usuario")</li>
+                    </ul>
+                }
             </div>
         </div>
     </div>

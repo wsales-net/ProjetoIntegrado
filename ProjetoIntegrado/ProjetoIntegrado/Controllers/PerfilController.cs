@@ -9,11 +9,13 @@ namespace ProjetoIntegrado.Controllers
     public class PerfilController : Controller
     {
         // GET: Perfil
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         [Route("Membro/Perfil/Cadastro")]
         public ActionResult Cadastro()
         {

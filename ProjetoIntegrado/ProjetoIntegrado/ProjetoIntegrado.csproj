@@ -143,7 +143,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
-    <Compile Include="Controllers\ContaController.cs" />
+    <Compile Include="Controllers\CaixaController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\FornecedorController.cs" />
     <Compile Include="Controllers\FuncaoController.cs" />
@@ -233,9 +233,9 @@
     <Content Include="Views\Local\Cadastro.cshtml" />
     <Content Include="Views\Grupo\Cadastro.cshtml" />
     <Content Include="Views\Marca\Cadastro.cshtml" />
-    <Content Include="Views\Conta\Pagamento.cshtml" />
-    <Content Include="Views\Conta\Recebimento.cshtml" />
-    <Content Include="Views\Conta\Tipo.cshtml" />
+    <Content Include="Views\Caixa\Pagamento.cshtml" />
+    <Content Include="Views\Caixa\Recebimento.cshtml" />
+    <Content Include="Views\Caixa\Tipo.cshtml" />
     <Content Include="Views\Fornecedor\Cadastro.cshtml" />
     <Content Include="Views\Operacao\Inventario.cshtml" />
     <Content Include="Views\Relatorio\Ressuprimento.cshtml" />
@@ -245,6 +245,7 @@
     <Content Include="Views\Produto\Lancamento.cshtml" />
     <Content Include="Views\Grafico\Perdas.cshtml" />
     <Content Include="Views\Grafico\EntradaSaida.cshtml" />
+    <Content Include="Views\Usuario\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
