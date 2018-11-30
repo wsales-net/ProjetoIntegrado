@@ -1,4 +1,5 @@
-﻿using ProjetoIntegrado.Models;
+﻿using ProjetoIntegrado.DAO;
+using ProjetoIntegrado.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace ProjetoIntegrado.Controllers
                 return View(usuario);
             }
 
-            var achou = (usuario.Login == "wsales" && usuario.Senha == "123");
+            var achou = UsuarioDAO.CheckUser(usuario.Login, usuario.Senha);
 
             if (achou)
             {

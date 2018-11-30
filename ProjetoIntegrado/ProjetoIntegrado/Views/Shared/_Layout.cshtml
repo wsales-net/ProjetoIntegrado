@@ -106,18 +106,19 @@
                             </ul>
                         </li>
                     </ul>
+                    using (Html.BeginForm("Logout", "Usuario", FormMethod.Post, new { id = "logoutForm" }))
+                    {
                     <ul class="nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Login", "Login", "Usuario")</li>
+                        <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
                         <li><a href="#">Olá @User.Identity.Name</a></li>
-                        @using (Html.BeginForm("Logout", "Usuario", FormMethod.Post, new { id = "logoutForm" }))
-                        {
-                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Sair</a></li>
-                        }
-                    </ul>//$('#tweetform').submit(); javascript:document.getElementById('logoutForm').submit()
+                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Sair</a></li>
+                    </ul>
+                    }
                 }
                 else
                 {
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Sobre mim</a></li>
                         <li>@Html.ActionLink("Login", "Login", "Usuario")</li>
                     </ul>
                 }
