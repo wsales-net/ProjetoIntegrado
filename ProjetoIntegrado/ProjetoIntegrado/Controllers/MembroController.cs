@@ -9,11 +9,13 @@ namespace ProjetoIntegrado.Controllers
     public class MembroController : Controller
     {
         // GET: Membro
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult Cadastro()
         {
             return View();

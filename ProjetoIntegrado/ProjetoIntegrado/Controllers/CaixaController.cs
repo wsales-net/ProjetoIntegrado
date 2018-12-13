@@ -6,26 +6,30 @@ using System.Web.Mvc;
 
 namespace ProjetoIntegrado.Controllers
 {
-    public class ContaController : Controller
+    public class CaixaController : Controller
     {
         // GET: Conta
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
-        [Route("Conta/Pagamento/Cadastro")]
+        [Authorize]
+        [Route("Caixa/Pagamento/Cadastro")]
         public ActionResult Pagamento()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult Recebimento()
         {
             return View();
         }
 
-        [Route("Conta/Pagamento/Tipo/Cadastro")]
+        [Authorize]
+        [Route("Caixa/Pagamento/Tipo/Cadastro")]
         public ActionResult Tipo()
         {
             return View();

@@ -9,11 +9,13 @@ namespace ProjetoIntegrado.Controllers
     public class GrupoController : Controller
     {
         // GET: Grupo
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         [Route("Produto/Grupo/Cadastro")]
         public ActionResult Cadastro()
         {

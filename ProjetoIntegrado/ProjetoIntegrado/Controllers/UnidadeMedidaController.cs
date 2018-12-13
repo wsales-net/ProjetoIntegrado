@@ -9,11 +9,13 @@ namespace ProjetoIntegrado.Controllers
     public class UnidadeMedidaController : Controller
     {
         // GET: UnidadeMedida
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         [Route("Produto/Unidade/Cadastro")]
         public ActionResult Cadastro()
         {

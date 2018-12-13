@@ -9,11 +9,13 @@ namespace ProjetoIntegrado.Controllers
     public class OperacaoController : Controller
     {
         // GET: Operacao
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult Inventario()
         {
             return View();

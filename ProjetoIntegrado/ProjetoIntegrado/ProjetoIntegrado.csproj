@@ -245,8 +245,6 @@
     <Content Include="Views\Produto\Lancamento.cshtml" />
     <Content Include="Views\Grafico\Perdas.cshtml" />
     <Content Include="Views\Grafico\EntradaSaida.cshtml" />
-    <Content Include="Views\Categoria\Index.cshtml" />
-    <Content Include="Views\Publico\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

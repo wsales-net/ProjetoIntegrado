@@ -9,11 +9,13 @@ namespace ProjetoIntegrado.Controllers
     public class LocalController : Controller
     {
         // GET: Local
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         [Route("Produto/Local/Cadastro")]
         public ActionResult Cadastro()
         {
