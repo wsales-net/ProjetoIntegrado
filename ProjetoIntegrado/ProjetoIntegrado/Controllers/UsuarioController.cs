@@ -1,9 +1,4 @@
-﻿using ProjetoIntegrado.DAO;
-using ProjetoIntegrado.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using ProjetoIntegrado.Models;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -34,7 +29,7 @@ namespace ProjetoIntegrado.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Login(Usuario usuario, string returnUrl)
+        public ActionResult Login(Usuario usuario)
         {
             //Valida se a entrada do usuario esta correto
             if (!ModelState.IsValid) //Se os dados que os usuarios digitou ainda são invalidos, exibe novamente a pagina de login
@@ -42,19 +37,17 @@ namespace ProjetoIntegrado.Controllers
                 return View(usuario);
             }
 
-            var achou = UsuarioDAO.CheckUser(usuario.Login, usuario.Senha);
+            var achou = true;// UsuarioDAO.CheckUser(usuario.Login, usuario.Senha);
 
             if (achou)
             {
                 FormsAuthentication.SetAuthCookie(usuario.Login, usuario.LembrarMe);
-                if (Url.IsLocalUrl(returnUrl))
-                {
-                    return Redirect(returnUrl);
-                }
-                else
-                {
-                    return RedirectToAction("Index", "Home");
-                }
+                //if (Url.IsLocalUrl(returnUrl))
+                //{
+                //    return Redirect(returnUrl);
+                //}
+                return RedirectToAction("Index", "Home");
+
             }
             else
             {
