@@ -40,14 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mapeamentos\Teste.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorios\BaseRepository.cs" />
-    <Compile Include="Repositorios\IBaseRepository.cs" />
-    <Compile Include="Repositorios\OrderDirection.cs" />
-    <Compile Include="Repositorios\Orders.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="IBaseRepository.cs" />
     <Compile Include="Repositorios\PessoaRepository.cs" />
-    <Compile Include="Repositorios\TesteRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Context\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoIntegrado.Dominio\ProjetoIntegrado.Dominio.csproj">
+      <Project>{d5d1f950-ba84-4024-9b30-e0ffec0be777}</Project>
+      <Name>ProjetoIntegrado.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
