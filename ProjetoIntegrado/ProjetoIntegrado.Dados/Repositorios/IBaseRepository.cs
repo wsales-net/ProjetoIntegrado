@@ -24,4 +24,3 @@ namespace ProjetoIntegrado.Dados.Repositorios
         void Update(T entity);
     }
 }
-}

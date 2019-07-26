@@ -1,5 +1,4 @@
-﻿using ProjetoIntegrado.DAO;
-using ProjetoIntegrado.Models;
+﻿using ProjetoIntegrado.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,31 +35,32 @@ namespace ProjetoIntegrado.Controllers
         [AllowAnonymous]
         public ActionResult Login(Usuario usuario, string returnUrl)
         {
-            //Valida se a entrada do usuario esta correto
-            if (!ModelState.IsValid) //Se os dados que os usuarios digitou ainda são invalidos, exibe novamente a pagina de login
-            {
-                return View(usuario);
-            }
+            ////Valida se a entrada do usuario esta correto
+            //if (!ModelState.IsValid) //Se os dados que os usuarios digitou ainda são invalidos, exibe novamente a pagina de login
+            //{
+            //    return View(usuario);
+            //}
 
-            var achou = UsuarioDAO.CheckUser(usuario.Login, usuario.Senha);
+            //var achou = UsuarioDAO.CheckUser(usuario.Login, usuario.Senha);
 
-            if (achou)
-            {
-                FormsAuthentication.SetAuthCookie(usuario.Login, usuario.LembrarMe);
-                if (Url.IsLocalUrl(returnUrl))
-                {
-                    return Redirect(returnUrl);
-                }
-                else
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-            }
-            else
-            {
-                ModelState.AddModelError("", "Login Inválido.");
-                return View(usuario);
-            }
+            //if (achou)
+            //{
+            //    FormsAuthentication.SetAuthCookie(usuario.Login, usuario.LembrarMe);
+            //    if (Url.IsLocalUrl(returnUrl))
+            //    {
+            //        return Redirect(returnUrl);
+            //    }
+            //    else
+            //    {
+            //        return RedirectToAction("Index", "Home");
+            //    }
+            //}
+            //else
+            //{
+            //    ModelState.AddModelError("", "Login Inválido.");
+            //    return View(usuario);
+            //}
+            return View(usuario);
         }
 
         [HttpPost]
