@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace ProjetoIntegrado.Dados.Repositorios
+namespace ProjetoIntegrado.Dados
 {
 
     public interface IBaseRepository<TEntidade, TChave> where TEntidade : class
