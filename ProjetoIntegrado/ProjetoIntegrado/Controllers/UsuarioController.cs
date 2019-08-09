@@ -7,13 +7,12 @@ namespace ProjetoIntegrado.Controllers
     public class UsuarioController : Controller
     {
         // GET: Usuario
-        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
-        [Authorize] //Acesso permitido somente com login
+        //[Authorize] //Acesso permitido somente com login
         [Route("Membro/Usuario/Cadastro")]
         public ActionResult Cadastro()
         {
