@@ -142,6 +142,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authentication\FuncAuthorizeAttribute.cs" />
+    <Compile Include="Authentication\LogInAuthorizeAttribute.cs" />
+    <Compile Include="Authentication\WebKeys.cs" />
+    <Compile Include="Controllers\CaixaController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\FornecedorController.cs" />
@@ -276,6 +280,12 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoIntegrado.Dominio\ProjetoIntegrado.Dominio.csproj">
+      <Project>{D5D1F950-BA84-4024-9B30-E0FFEC0BE777}</Project>
+      <Name>ProjetoIntegrado.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
