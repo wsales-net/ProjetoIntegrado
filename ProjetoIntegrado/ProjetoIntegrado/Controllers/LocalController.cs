@@ -1,4 +1,6 @@
 ﻿using System.Web.Mvc;
+using ProjetoIntegrado.Authentication;
+using ProjetoIntegrado.Dominio.Enum;
 
 namespace ProjetoIntegrado.Controllers
 {
@@ -10,6 +12,7 @@ namespace ProjetoIntegrado.Controllers
             return View();
         }
 
+        [FuncAuthorize(Funcionalidade = FuncionalidadeEnum.AdicionarRemoverFavoritosAplicacao)]
         [Route("Produto/Local/Cadastro")]
         public ActionResult Cadastro()
         {

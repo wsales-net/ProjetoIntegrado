@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -10,11 +11,16 @@ using System.Text.RegularExpressions;
 
 namespace ProjetoIntegrado.Dominio.Helpers
 {
-    public static class Rotinas
+    public static class Extensoes
     {
         public static IComparable GetPropertyByName<T>(string propertyName, T item) where T : class
         {
-            return (IComparable)typeof(T).GetProperty(propertyName).GetValue(item, null);
+            return (IComparable)typeof(T).GetProperty(propertyName)?.GetValue(item, null);
+        }
+
+        public static bool IsNullOrEmpty(this IEnumerable @this)
+        {
+            return @this.Cast<object>().Any(lista => lista == null);
         }
 
         public static IComparable GetPropertyByIndex<T>(int index, T item) where T : class
@@ -35,7 +41,7 @@ namespace ProjetoIntegrado.Dominio.Helpers
 
         public static decimal TratarDecimal(decimal? valor, decimal valorSeNulo = 0)
         {
-            return (valor == null) ? valorSeNulo : (decimal)valor;
+            return valor ?? valorSeNulo;
         }
 
         public static decimal ToDecimal(this string value)
@@ -46,7 +52,7 @@ namespace ProjetoIntegrado.Dominio.Helpers
         public static decimal Truncate(decimal d, int precision)
         {
             var factor = 1.0m;
-            for (int i = 0; i < precision; i++)
+            for (var i = 0; i < precision; i++)
                 factor *= 10.0m;
             return Math.Truncate(factor * d) / factor;
         }
@@ -93,7 +99,7 @@ namespace ProjetoIntegrado.Dominio.Helpers
 
         public static string ToStringSemDecimais(this decimal valor)
         {
-            return string.Format("{0:0}", valor);
+            return $"{valor:0}";
         }
 
         public static string ToStringSemDecimais(this decimal? valor)
@@ -103,7 +109,7 @@ namespace ProjetoIntegrado.Dominio.Helpers
                 valor = 0;
             }
 
-            return string.Format("{0:0}", valor);
+            return $"{valor:0}";
         }
 
         public static string ToStringDto(this bool valor, bool uppercase = false)
@@ -231,7 +237,7 @@ namespace ProjetoIntegrado.Dominio.Helpers
                 var sb = new StringBuilder();
                 for (var i = 0; i < buffer.Length; i++)
                 {
-                    sb.Append(buffer[i].ToString("x2"));
+                    sb.Append(i.ToString("x2"));
                 }
                 return sb.ToString();
             }

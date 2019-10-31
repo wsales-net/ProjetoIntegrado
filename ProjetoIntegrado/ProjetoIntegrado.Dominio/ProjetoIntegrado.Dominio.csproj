@@ -44,7 +44,7 @@
     <Compile Include="Dto\MenuItemDto.cs" />
     <Compile Include="Dto\UsuarioDto.cs" />
     <Compile Include="Enum\FuncionalidadeEnum.cs" />
-    <Compile Include="Helpers\Rotinas.cs" />
+    <Compile Include="Helpers\Extensoes.cs" />
     <Compile Include="Integracao\Servicos\Correios\ICorreiosServico.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,21 +1,17 @@
 ﻿using System;
+using System.Collections;
 using System.Web;
 using System.Web.Mvc;
 using ProjetoIntegrado.Dominio.Dto;
 using ProjetoIntegrado.Dominio.Enum;
+using ProjetoIntegrado.Dominio.Helpers;
 
 namespace ProjetoIntegrado.Authentication
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
-    public class FuncAuthorizeAttribute
+    public class FuncAuthorizeAttribute : LogInAuthorizeAttribute
     {
-        private string _returnUrl = "/Erro/AcessoNegado";
-
-        public string ReturnUrl
-        {
-            get { return _returnUrl; }
-            set { _returnUrl = value; }
-        }
+        public string ReturnUrl { get; set; } = "/Erro/AcessoNegado";
 
         public FuncionalidadeEnum Funcionalidade { get; set; }
         public FuncionalidadeEnum[] Funcionalidades { get; set; }
@@ -44,7 +40,7 @@ namespace ProjetoIntegrado.Authentication
             {
                 foreach (var funcionalidadePerfil in FuncionalidadesPerfil)
                 {
-                    temPermissao = Funcionalidades.Contains((FuncionalidadeEnum)funcionalidadePerfil);
+                    temPermissao = ((IList) Funcionalidades).Contains((FuncionalidadeEnum)funcionalidadePerfil);
                     if (temPermissao)
                     {
                         break;
